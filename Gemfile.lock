@@ -5,6 +5,7 @@ GEM
     httparty (0.6.1)
       crack (= 0.1.8)
     rack (1.2.1)
+    rack-ssl-enforcer (0.1.8)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -15,4 +16,5 @@ PLATFORMS
 
 DEPENDENCIES
   httparty
+  rack-ssl-enforcer
   sinatra
