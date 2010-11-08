@@ -26,7 +26,7 @@ class GoogleDocs
 end
 
 get '/' do
-  "Google-doc-alerts, usage: GET /feed.xml?email=email&password=password"
+  "Google-doc-alerts, usage: GET /feed.xml with google app email and password as HTTP username and password"
 end
 
 use Rack::Auth::Basic do |username, password|
