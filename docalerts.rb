@@ -29,7 +29,12 @@ get '/' do
   "Google-doc-alerts, usage: GET /feed.xml?email=email&password=password"
 end
 
+use Rack::Auth::Basic do |username, password|
+  true
+end
+
 get "/feed.xml" do
-  auth_key = GoogleAuthorize.new.get_auth_key(params[:email], params[:password])
+  auth = Rack::Auth::Basic::Request.new(request.env)
+  auth_key = GoogleAuthorize.new.get_auth_key(auth.credentials[0], auth.credentials[1])
   GoogleDocs.new.list_docs(auth_key)
 end
