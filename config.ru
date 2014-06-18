@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
-require 'docalerts'
+require_relative 'docalerts'
 require 'rack-ssl-enforcer'
 
 use Rack::SslEnforcer
